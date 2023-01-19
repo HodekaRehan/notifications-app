@@ -1,0 +1,110 @@
+.notification{
+   cursor: pointer;
+   @include flex(flex-start, start);
+   border-radius: 1rem;
+   padding: 1rem;
+
+   @include for-size(sm) {
+      padding: 2rem;
+   }
+
+   &.unread{
+      background-color: $clr-light-grayish-blue-1;
+
+      .notification-para{
+         &::after{
+            content: '';
+            width: .9rem;
+            height: .9rem;
+            border-radius: 50%;
+            background-color: $clr-red;
+            display: inline-block;
+            margin-left: 1rem;
+   
+         }
+      }
+   }
+
+   &__image{
+      max-width: 4rem;
+      margin-right: 1rem;
+
+      @include for-size(sm) {
+         max-width: 4.5rem;
+         margin-right: 2rem;
+      }
+   }
+
+   &__chess-image{
+      max-width: 4rem;
+      margin-left: auto;
+      border-radius: 1rem;
+
+      &:hover{
+         box-shadow: 0px 0px 5px 5px $clr-light-grayish-blue-2;
+         transition: .3s ease-in-out;
+      }
+
+      @include for-size(sm) {
+         max-width: 4.5rem;
+      }
+   }
+
+   &-para{
+      font-size: 1.5rem;
+      color: $clr-dark-grayish-blue;
+
+      @include for-size(sm) {
+         font-size: 1.6rem;
+      }
+
+      &__person-name{
+         font-weight: 800;
+         color: $clr-very-dark-blue;
+
+         &:hover{
+            @include hoverColor($clr-blue)
+         }
+      }
+
+      .bold-text{
+         font-weight: 800;
+
+         &:hover{
+            @include hoverColor($clr-blue)
+         }
+      }
+
+      .chess-club{
+         font-weight: 800;
+         color: $clr-blue;
+      }
+      
+   }
+
+   &__time {
+      color: $clr-dark-grayish-blue;
+      font-size: 1.4rem;
+      display: block;
+      margin-top: .5rem;
+   }
+
+   &__message{
+      border: 1px solid $clr-light-grayish-blue-2;
+      padding: 1.4rem 1.6rem;
+      font-size: 1.5rem;
+      color: $clr-dark-grayish-blue;
+      margin-top: 1.4rem;
+      border-radius: .7rem;
+
+
+      &:hover{
+         background-color: $clr-light-grayish-blue-2;
+         transition: .5s ease-in-out;
+      }
+   }
+
+   
+
+   
+}

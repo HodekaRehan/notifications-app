@@ -1,0 +1,62 @@
+@mixin for-size($size) {
+   @if $size == xs {
+      @media (min-width: 420px) { 
+         @content 
+      }
+   };
+
+   @if $size == sm {
+      @media (min-width: 768px) { 
+         @content 
+      }
+   };
+
+   @if $size == md {
+      @media (min-width: 996px) { 
+         @content 
+      }
+   };
+
+   @if $size == lg {
+      @media (min-width: 1200px) { 
+         @content 
+      }
+   };
+
+   @if $size == xl {
+      @media (min-width: 1400px) { 
+         @content 
+      }
+   };
+
+   @if $size == xxl {
+      @media (min-width: 1920px) { 
+         @content 
+      }
+   };
+   
+}
+
+
+@mixin ff-PlusJakartaSans($font-weight){
+   font-family: 'Plus Jakarta Sans', sans-serif;
+   font-weight: $font-weight;
+}
+
+@mixin flex($align-items, $justify-content) {
+   display: flex;
+   align-items: $align-items;
+   justify-content: $justify-content;
+}
+
+@mixin moveInAnimation($animation-name) {
+   animation-name: $animation-name;
+   animation-duration: 1s;
+   animation-timing-function: ease-in-out;
+}
+
+@mixin hoverColor($color) {
+   color: $color;
+   transition: .3s ease-in-out;
+}
+

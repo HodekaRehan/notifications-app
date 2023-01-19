@@ -1,0 +1,276 @@
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  75% {
+    opacity: 0.75;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: hsl(211deg, 68%, 94%);
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+@media (min-width: 768px) {
+  body {
+    padding: 4rem 0;
+  }
+}
+
+body {
+  line-height: 1.4;
+  color: hsl(219deg, 14%, 63%);
+  font-size: 1.6rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+}
+
+button {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  color: hsl(219deg, 12%, 42%);
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+button:hover {
+  color: hsl(219deg, 85%, 26%);
+}
+@media (min-width: 768px) {
+  button {
+    font-size: 1.6rem;
+  }
+}
+
+.notification {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .notification {
+    padding: 2rem;
+  }
+}
+.notification.unread {
+  background-color: hsl(211deg, 68%, 94%);
+}
+.notification.unread .notification-para::after {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: hsl(1deg, 90%, 64%);
+  display: inline-block;
+  margin-left: 1rem;
+}
+.notification__image {
+  max-width: 4rem;
+  margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .notification__image {
+    max-width: 4.5rem;
+    margin-right: 2rem;
+  }
+}
+.notification__chess-image {
+  max-width: 4rem;
+  margin-left: auto;
+  border-radius: 1rem;
+}
+.notification__chess-image:hover {
+  box-shadow: 0px 0px 5px 5px hsl(205deg, 33%, 90%);
+  transition: 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .notification__chess-image {
+    max-width: 4.5rem;
+  }
+}
+.notification-para {
+  font-size: 1.5rem;
+  color: hsl(219deg, 12%, 42%);
+}
+@media (min-width: 768px) {
+  .notification-para {
+    font-size: 1.6rem;
+  }
+}
+.notification-para__person-name {
+  font-weight: 800;
+  color: hsl(224deg, 21%, 14%);
+}
+.notification-para__person-name:hover {
+  color: hsl(219deg, 85%, 26%);
+  transition: 0.3s ease-in-out;
+}
+.notification-para .bold-text {
+  font-weight: 800;
+}
+.notification-para .bold-text:hover {
+  color: hsl(219deg, 85%, 26%);
+  transition: 0.3s ease-in-out;
+}
+.notification-para .chess-club {
+  font-weight: 800;
+  color: hsl(219deg, 85%, 26%);
+}
+.notification__time {
+  color: hsl(219deg, 12%, 42%);
+  font-size: 1.4rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+.notification__message {
+  border: 1px solid hsl(205deg, 33%, 90%);
+  padding: 1.4rem 1.6rem;
+  font-size: 1.5rem;
+  color: hsl(219deg, 12%, 42%);
+  margin-top: 1.4rem;
+  border-radius: 0.7rem;
+}
+.notification__message:hover {
+  background-color: hsl(205deg, 33%, 90%);
+  transition: 0.5s ease-in-out;
+}
+
+main {
+  background-color: hsl(0deg, 0%, 100%);
+  max-width: 73rem;
+  width: 100%;
+  padding: 0 1.6rem 1.6rem 1.6rem;
+}
+@media (min-width: 768px) {
+  main {
+    border-radius: 2rem;
+    padding: 0 3.2rem 3.2rem 3.2rem;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  padding: 2.4rem 0;
+}
+@media (min-width: 768px) {
+  .navigation {
+    padding: 3.2rem 0;
+  }
+}
+.navigation__notifications {
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: hsl(219deg, 12%, 42%);
+  font-size: 1.6rem;
+}
+@media (min-width: 768px) {
+  .navigation__notifications {
+    font-size: 1.8rem;
+  }
+}
+.navigation__notifications .unread-notifications {
+  background-color: hsl(219deg, 85%, 26%);
+  color: hsl(210deg, 60%, 98%);
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.8rem;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+@media (min-width: 768px) {
+  .navigation__notifications .unread-notifications {
+    font-size: 1.4rem;
+  }
+}
+.navigation__notifications-btn {
+  -webkit-animation-name: moveInRight;
+          animation-name: moveInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  background-color: transparent;
+  border: 0;
+}
+
+.notifications-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+}/*# sourceMappingURL=main.css.map */

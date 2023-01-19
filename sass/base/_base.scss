@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html{
+   font-size: 62.5%;
+   background-color: $clr-light-grayish-blue-1;
+}
+
+body{
+   box-sizing: border-box;
+   @include flex(center, center);
+   min-height: 100vh;
+   overflow-x: hidden;
+
+   @include for-size(sm) {
+      padding: 4rem 0;
+   }
+}
+

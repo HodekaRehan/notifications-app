@@ -1,0 +1,75 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/notification";
+
+@import "pages/notification";
+
+main{
+   background-color: $clr-white;
+   max-width: 73rem;
+   width: 100%;
+   padding: 0 1.6rem 1.6rem 1.6rem;
+
+   @include for-size(sm) {
+      border-radius: 2rem;
+      padding: 0 3.2rem 3.2rem 3.2rem;
+   }
+}
+
+.navigation{
+   @include flex(center, space-between);
+   backface-visibility: hidden;
+   padding: 2.4rem 0;
+
+   @include for-size(sm) {
+      padding: 3.2rem 0;
+   }
+
+   &__notifications{
+      @include moveInAnimation(moveInLeft);
+      @include ff-PlusJakartaSans(800);
+      color: $clr-dark-grayish-blue;
+      font-size: 1.6rem;
+
+      @include for-size(sm) {
+         font-size: 1.8rem;
+      }
+
+      .unread-notifications{
+         background-color: $clr-blue;
+         color: $clr-very-light-grayish-blue;
+         padding: .6rem 1.4rem;
+         border-radius: .8rem;
+         display: inline-block;
+         font-size: 1.3rem;
+         margin-left: 1rem;
+
+         @include for-size(sm) {
+            font-size: 1.4rem;
+         }
+      }
+   }
+
+   &__notifications-btn{
+      @include moveInAnimation(moveInRight);
+      background-color: transparent;
+      border: 0;
+   }
+}
+
+.notifications-section{
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1.6rem;
+
+   
+}
+
